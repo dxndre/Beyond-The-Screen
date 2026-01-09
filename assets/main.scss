@@ -52,6 +52,7 @@ $red: #dc3545;
 $orange: #fd7e14;
 $yellow: #ffc107;
 $bts-yellow: #ffca07;
+$bts-grey: #323b4b;
 $green: #198754;
 $teal: #20c997;
 $cyan: #0dcaf0;
@@ -135,16 +136,18 @@ body {
 		background: transparent;
 		padding: 0;
 		height: 100px;
+		margin-top: 12px;
 
 		#navbar {
 			flex-grow: 0;
 
 			#menu-header {
-				gap: 12px;
+				gap: 20px;
 				
 				li {
 					a {
-						color: white;
+						color: black;
+						font-weight: 500;
 					}
 				}
 			}
@@ -156,13 +159,13 @@ body {
 
 		.wp-block-button {
 			.wp-block-button__link {
-				border: 1px solid transparent;
+				border: 2px solid transparent;
 				font-weight: 500;
 				transform: scale(1);
 				transition: 0.5s all ease;
 
 				&:hover {
-					transform: scale(1.1);
+					// transform: scale(1.1);
 					transition: 0.5s all ease;
 				}
 			}
@@ -174,20 +177,20 @@ body {
 					color: black;
 
 					&:hover {
-						transform: scale(1.1);
+						// transform: scale(1.1);
 					}
 				}
 			}
 
 			&.secondary {
 				.wp-block-button__link {
-					background-color: transparent;
-					border-color: $bts-yellow;
-					color: $bts-yellow;
+					background-color: $bts-grey;
+					border-color: $bts-grey;
+					color: white;
 
 					&:hover {
-						color: black;
-						background-color: $bts-yellow;
+						color: $bts-grey;
+						background-color: transparent;
 					}
 				}
 			}
@@ -240,6 +243,18 @@ body {
 				&.hero {
 					.wp-block-cover {
 						padding-top: 100px;
+
+						figure {
+							&.foreground {
+								color: $bts-grey;
+
+								img {
+									border-radius: 50px;
+									mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+									border: 1px solid #69520038;
+								}
+							}
+						}
 					}
 
 					.container {
@@ -255,24 +270,30 @@ body {
 						.supporting-text {
 							font-size: 1.5em;
 							line-height: 1.5em;
-							margin-bottom: 1em;
+							margin-bottom: 1.5em;
 						}
 					}
 				}
 
-				&.problem {
-					.container {
-						> .wp-block-group__inner-container {
-							max-width: 576px;
-							margin-left: 0;
-						}
-					}
-				}
+				// &.problem {
+				// 	.container {
+				// 		.wp-block-group__inner-container {
+							
+				// 		}
+				// 	}
+				// }
 
 				&.what-we-do {
 					.container {
 						> .wp-block-group__inner-container {
 							max-width: 992px;
+
+							.supporting-text {
+								width: 100%;
+								max-width: 576px;
+								margin: 0 auto;
+								margin-bottom: 3em;
+							}
 						}
 					}
 
@@ -280,7 +301,41 @@ body {
 						gap: 12px;
 
 						.card {
-							padding: 2em;
+							padding: 2em 2.5em;
+							box-shadow: 0px 0px 50px -30px black;
+							background-color: rgba(255, 255, 255, 0.55);
+							backdrop-filter: blur(20px);
+							border-radius: 20px;
+
+							img {
+								max-width: 80px;
+								max-height: 80px;
+								object-fit: contain;
+							}
+
+							h3 {
+								font-size: 1.5em;
+							}
+
+							p {
+								font-size: 16px;
+								margin-bottom: 0;
+							}
+						}
+					}
+				}
+
+				&.partners {	
+					figure.wp-block-image {
+						margin-bottom: auto !important;
+						margin-top: auto !important;
+
+						img {
+							width: 100%;
+							max-width: 250px !important;
+							max-height: 80px;
+							object-fit: contain;
+							filter: grayscale(1)brightness(0)opacity(0.625);
 						}
 					}
 				}
@@ -336,8 +391,19 @@ img {
 /* Header */
 
 #header {
+	background-color: transparent;
+	transition: 0.5s all ease;
+
 	.search-form {
 		min-width: 250px;
+	}
+
+	&.scrolled {
+		backdrop-filter: saturate(180%) blur(115px);
+		box-shadow: 0px 0px 50px -30px black;
+		background-color: rgba(255, 255, 255, 0.25);
+		margin-top: 0 ;
+		transition: 0.5s all ease;
 	}
 }
 
@@ -345,7 +411,7 @@ img {
 	color: white;
 
 	img {
-		height: 40px;
+		height: 80px;
 	}
 }
 

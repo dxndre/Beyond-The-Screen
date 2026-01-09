@@ -12546,27 +12546,28 @@ body nav#header {
   background: transparent;
   padding: 0;
   height: 100px;
+  margin-top: 12px;
 }
 body nav#header #navbar {
   flex-grow: 0;
 }
 body nav#header #navbar #menu-header {
-  gap: 12px;
+  gap: 20px;
 }
 body nav#header #navbar #menu-header li a {
-  color: white;
+  color: black;
+  font-weight: 500;
 }
 body .wp-block-buttons {
   gap: 12px;
 }
 body .wp-block-buttons .wp-block-button .wp-block-button__link {
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   font-weight: 500;
   transform: scale(1);
   transition: 0.5s all ease;
 }
 body .wp-block-buttons .wp-block-button .wp-block-button__link:hover {
-  transform: scale(1.1);
   transition: 0.5s all ease;
 }
 body .wp-block-buttons .wp-block-button.primary .wp-block-button__link {
@@ -12574,17 +12575,14 @@ body .wp-block-buttons .wp-block-button.primary .wp-block-button__link {
   border-color: #ffca07;
   color: black;
 }
-body .wp-block-buttons .wp-block-button.primary .wp-block-button__link:hover {
-  transform: scale(1.1);
-}
 body .wp-block-buttons .wp-block-button.secondary .wp-block-button__link {
-  background-color: transparent;
-  border-color: #ffca07;
-  color: #ffca07;
+  background-color: #323b4b;
+  border-color: #323b4b;
+  color: white;
 }
 body .wp-block-buttons .wp-block-button.secondary .wp-block-button__link:hover {
-  color: black;
-  background-color: #ffca07;
+  color: #323b4b;
+  background-color: transparent;
 }
 body.page-template-page-full #main {
   max-width: 100%;
@@ -12621,6 +12619,14 @@ body.page-template-page-homepage #main section .container > .wp-block-group__inn
 body.page-template-page-homepage #main section.hero .wp-block-cover {
   padding-top: 100px;
 }
+body.page-template-page-homepage #main section.hero .wp-block-cover figure.foreground {
+  color: #323b4b;
+}
+body.page-template-page-homepage #main section.hero .wp-block-cover figure.foreground img {
+  border-radius: 50px;
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  border: 1px solid rgba(105, 82, 0, 0.2196078431);
+}
 body.page-template-page-homepage #main section.hero .container > .wp-block-group__inner-container {
   padding-bottom: 2em;
 }
@@ -12631,20 +12637,49 @@ body.page-template-page-homepage #main section.hero .hero-content {
 body.page-template-page-homepage #main section.hero .hero-content .supporting-text {
   font-size: 1.5em;
   line-height: 1.5em;
-  margin-bottom: 1em;
-}
-body.page-template-page-homepage #main section.problem .container > .wp-block-group__inner-container {
-  max-width: 576px;
-  margin-left: 0;
+  margin-bottom: 1.5em;
 }
 body.page-template-page-homepage #main section.what-we-do .container > .wp-block-group__inner-container {
   max-width: 992px;
+}
+body.page-template-page-homepage #main section.what-we-do .container > .wp-block-group__inner-container .supporting-text {
+  width: 100%;
+  max-width: 576px;
+  margin: 0 auto;
+  margin-bottom: 3em;
 }
 body.page-template-page-homepage #main section.what-we-do .cards {
   gap: 12px;
 }
 body.page-template-page-homepage #main section.what-we-do .cards .card {
-  padding: 2em;
+  padding: 2em 2.5em;
+  box-shadow: 0px 0px 50px -30px black;
+  background-color: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+}
+body.page-template-page-homepage #main section.what-we-do .cards .card img {
+  max-width: 80px;
+  max-height: 80px;
+  object-fit: contain;
+}
+body.page-template-page-homepage #main section.what-we-do .cards .card h3, body.page-template-page-homepage #main section.what-we-do .cards .card .h3 {
+  font-size: 1.5em;
+}
+body.page-template-page-homepage #main section.what-we-do .cards .card p {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+body.page-template-page-homepage #main section.partners figure.wp-block-image {
+  margin-bottom: auto !important;
+  margin-top: auto !important;
+}
+body.page-template-page-homepage #main section.partners figure.wp-block-image img {
+  width: 100%;
+  max-width: 250px !important;
+  max-height: 80px;
+  object-fit: contain;
+  filter: grayscale(1) brightness(0) opacity(0.625);
 }
 body {
   /* If WP-Adminbar is visible */
@@ -12685,15 +12720,26 @@ img {
 }
 
 /* Header */
+#header {
+  background-color: transparent;
+  transition: 0.5s all ease;
+}
 #header .search-form {
   min-width: 250px;
+}
+#header.scrolled {
+  backdrop-filter: saturate(180%) blur(115px);
+  box-shadow: 0px 0px 50px -30px black;
+  background-color: rgba(255, 255, 255, 0.25);
+  margin-top: 0;
+  transition: 0.5s all ease;
 }
 
 .navbar-brand {
   color: white;
 }
 .navbar-brand img {
-  height: 40px;
+  height: 80px;
 }
 
 .navbar-static-top {
