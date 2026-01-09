@@ -53,12 +53,13 @@
 								endif;
 							?>
 						</div>
-						<div class="d-block d-md-none">
-							<p class="d-block d-md-none"><?php printf( esc_html__( '&copy; %1$s %2$s. All rights reserved.', 'beyond-the-screen' ), wp_date( 'Y' ), get_bloginfo( 'name', 'display' ) ); ?></p>
-						</div>
+						
 					<?php
 						endif;
 					?>
+					<div class="col-md-12 d-block d-md-none">
+						<p><?php printf( esc_html__( '&copy; %1$s %2$s. All rights reserved.', 'beyond-the-screen' ), wp_date( 'Y' ), get_bloginfo( 'name', 'display' ) ); ?></p>
+					</div>
 				</div><!-- /.row -->
 			</div><!-- /.container -->
 		</footer><!-- /#footer -->

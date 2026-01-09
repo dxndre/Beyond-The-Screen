@@ -541,7 +541,7 @@ body {
 						gap: 1.5rem;
 						width: max-content;
 
-						animation: marquee-scroll 50s linear infinite;
+						animation: marquee-scroll 10s linear infinite;
 						will-change: transform;
 
 						@include media-breakpoint-up(md) {
@@ -581,7 +581,7 @@ body {
 						display: flex;
 						flex-wrap: nowrap;
 						align-items: center;
-						gap: 3rem;
+						gap: 2rem;
 						width: max-content;
 
 						animation: marquee-scroll 40s linear infinite;
