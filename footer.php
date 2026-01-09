@@ -18,7 +18,7 @@
 				<div class="row">
 					<div class="col-md-6">
 						<span class="footer-text">Beyond the Screen is an independent, non-profit initiative focused on children’s mental health in the digital age.</span>
-						<p><?php printf( esc_html__( '&copy; %1$s %2$s. All rights reserved.', 'beyond-the-screen' ), wp_date( 'Y' ), get_bloginfo( 'name', 'display' ) ); ?></p>
+						<p class="d-none d-md-block"><?php printf( esc_html__( '&copy; %1$s %2$s. All rights reserved.', 'beyond-the-screen' ), wp_date( 'Y' ), get_bloginfo( 'name', 'display' ) ); ?></p>
 					</div>
 
 					<?php
@@ -35,7 +35,7 @@
 									//'fallback_cb'     => 'WP_Bootstrap4_Navwalker_Footer::fallback',
 									'walker'          => new WP_Bootstrap4_Navwalker_Footer(),
 									'theme_location'  => 'footer-menu',
-									'items_wrap'      => '<ul class="menu nav justify-content-end">%3$s</ul>',
+									'items_wrap'      => '<ul class="menu nav footer-menu">%3$s</ul>',
 								)
 							);
 						endif;
@@ -52,6 +52,9 @@
 							<?php
 								endif;
 							?>
+						</div>
+						<div class="d-block d-md-none">
+							<p class="d-block d-md-none"><?php printf( esc_html__( '&copy; %1$s %2$s. All rights reserved.', 'beyond-the-screen' ), wp_date( 'Y' ), get_bloginfo( 'name', 'display' ) ); ?></p>
 						</div>
 					<?php
 						endif;

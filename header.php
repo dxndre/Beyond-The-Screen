@@ -38,9 +38,46 @@
 					?>
 				</a>
 
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'beyond-the-screen' ); ?>">
-					<span class="navbar-toggler-icon"></span>
+				<button
+					class="navbar-toggler d-lg-none"
+					type="button"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#mobileNav"
+					aria-controls="mobileNav"
+				>
+					<span class="navbar-toggler-line"></span>
+					<span class="navbar-toggler-line"></span>
+					<span class="navbar-toggler-line"></span>
 				</button>
+
+				<div
+					class="offcanvas offcanvas-end d-block d-lg-none"
+					tabindex="-1"
+					id="mobileNav"
+					aria-labelledby="mobileNavLabel"
+				>
+					<div class="offcanvas-header">
+						<h5 id="mobileNavLabel" class="mb-0">Menu</h5>
+
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="offcanvas"
+							aria-label="Close"
+						></button>
+					</div>
+
+					<div class="offcanvas-body">
+						<?php
+							wp_nav_menu([
+								'theme_location' => 'main-menu',
+								'menu_class'     => 'navbar-nav',
+								'container'      => false,
+								'walker'         => new WP_Bootstrap_Navwalker(),
+							]);
+						?>
+					</div>
+				</div>
 
 				<div id="navbar" class="collapse navbar-collapse">
 					<?php
