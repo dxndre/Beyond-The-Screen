@@ -12545,8 +12545,13 @@ body p, body span {
 body nav#header {
   background: transparent;
   padding: 0;
-  height: 100px;
+  height: 75px;
   margin-top: 12px;
+}
+@media (min-width: 768px) {
+  body nav#header {
+    height: 100px;
+  }
 }
 body nav#header #navbar {
   flex-grow: 0;
@@ -12557,6 +12562,22 @@ body nav#header #navbar #menu-header {
 body nav#header #navbar #menu-header li a {
   color: black;
   font-weight: 500;
+  margin-bottom: 4px;
+  transition: 0.5s all ease;
+}
+body nav#header #navbar #menu-header li a::after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 2px;
+  top: 4px;
+  position: relative;
+  background: black;
+  transition: 0.5s all ease;
+}
+body nav#header #navbar #menu-header li a:hover::after {
+  width: 100%;
+  transition: 0.5s all ease;
 }
 body .wp-block-buttons {
   gap: 12px;
@@ -12593,13 +12614,33 @@ body.page-template-page-homepage #main {
   margin-top: 0;
 }
 body.page-template-page-homepage #main h1, body.page-template-page-homepage #main .h1 {
-  font-size: 4em !important;
+  font-size: 2.75em !important;
   margin-bottom: 0.5em;
 }
+@media (min-width: 768px) {
+  body.page-template-page-homepage #main h1, body.page-template-page-homepage #main .h1 {
+    font-size: 3.125em !important;
+  }
+}
+@media (min-width: 1200px) {
+  body.page-template-page-homepage #main h1, body.page-template-page-homepage #main .h1 {
+    font-size: 4em !important;
+  }
+}
 body.page-template-page-homepage #main h2, body.page-template-page-homepage #main .h2 {
-  font-size: 2.5em !important;
+  font-size: 1.75em !important;
   line-height: 1.5em;
   margin-bottom: 0.75em;
+}
+@media (min-width: 768px) {
+  body.page-template-page-homepage #main h2, body.page-template-page-homepage #main .h2 {
+    font-size: 2em !important;
+  }
+}
+@media (min-width: 1200px) {
+  body.page-template-page-homepage #main h2, body.page-template-page-homepage #main .h2 {
+    font-size: 2.5em !important;
+  }
 }
 body.page-template-page-homepage #main p {
   font-size: 1.2em;
@@ -12613,8 +12654,14 @@ body.page-template-page-homepage #main .btn, body.page-template-page-homepage #m
   padding: 1em 1.5em;
 }
 body.page-template-page-homepage #main section .container > .wp-block-group__inner-container {
-  margin: 3em auto;
-  padding: 2em 0;
+  margin: 0 auto;
+  padding: 0.5em 0;
+}
+@media (min-width: 768px) {
+  body.page-template-page-homepage #main section .container > .wp-block-group__inner-container {
+    margin: 3em auto;
+    padding: 2em 0;
+  }
 }
 body.page-template-page-homepage #main section.hero .wp-block-cover {
   padding-top: 100px;
@@ -12635,9 +12682,14 @@ body.page-template-page-homepage #main section.hero .hero-content {
   max-width: 768px;
 }
 body.page-template-page-homepage #main section.hero .hero-content .supporting-text {
-  font-size: 1.5em;
+  font-size: 1.125em;
   line-height: 1.5em;
   margin-bottom: 1.5em;
+}
+@media (min-width: 768px) {
+  body.page-template-page-homepage #main section.hero .hero-content .supporting-text {
+    font-size: 1.5em;
+  }
 }
 body.page-template-page-homepage #main section.what-we-do .container > .wp-block-group__inner-container {
   max-width: 992px;
@@ -12649,18 +12701,24 @@ body.page-template-page-homepage #main section.what-we-do .container > .wp-block
   margin-bottom: 3em;
 }
 body.page-template-page-homepage #main section.what-we-do .cards {
-  gap: 12px;
+  gap: 24px;
+  grid-template-columns: revert;
+}
+@media (min-width: 768px) {
+  body.page-template-page-homepage #main section.what-we-do .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 body.page-template-page-homepage #main section.what-we-do .cards .card {
   padding: 2em 2.5em;
-  box-shadow: 0px 0px 50px -30px black;
-  background-color: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(20px);
+  box-shadow: 0px 12px 40px -20px #9a7900;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
 }
 body.page-template-page-homepage #main section.what-we-do .cards .card img {
-  max-width: 80px;
-  max-height: 80px;
+  max-width: 100px;
+  max-height: 100px;
   object-fit: contain;
 }
 body.page-template-page-homepage #main section.what-we-do .cards .card h3, body.page-template-page-homepage #main section.what-we-do .cards .card .h3 {
@@ -12668,13 +12726,17 @@ body.page-template-page-homepage #main section.what-we-do .cards .card h3, body.
 }
 body.page-template-page-homepage #main section.what-we-do .cards .card p {
   font-size: 16px;
+  font-weight: 400;
   margin-bottom: 0;
 }
-body.page-template-page-homepage #main section.partners figure.wp-block-image {
+body.page-template-page-homepage #main section.partners .partners-gallery {
+  margin-top: 1em;
+}
+body.page-template-page-homepage #main section.partners .partners-gallery figure.wp-block-image {
   margin-bottom: auto !important;
   margin-top: auto !important;
 }
-body.page-template-page-homepage #main section.partners figure.wp-block-image img {
+body.page-template-page-homepage #main section.partners .partners-gallery figure.wp-block-image img {
   width: 100%;
   max-width: 250px !important;
   max-height: 80px;
@@ -12739,7 +12801,12 @@ img {
   color: white;
 }
 .navbar-brand img {
-  height: 80px;
+  height: 60px;
+}
+@media (min-width: 768px) {
+  .navbar-brand img {
+    height: 80px;
+  }
 }
 
 .navbar-static-top {
@@ -12753,10 +12820,22 @@ img {
 
 /* Footer */
 #footer {
-  background-color: #fff;
+  background-color: #000;
+  color: white;
+  padding: 3em 0;
+}
+#footer .footer-text {
+  display: block;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #ccc;
 }
 #footer p {
   margin-top: 10px;
+}
+#footer .menu-item a {
+  color: white;
 }
 #footer .menu-item a[aria-current=page] {
   color: rgb(10.4, 88, 202.4);

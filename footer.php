@@ -17,6 +17,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
+						<span class="footer-text">Beyond the Screen is an independent, non-profit initiative focused on children’s mental health in the digital age.</span>
 						<p><?php printf( esc_html__( '&copy; %1$s %2$s. All rights reserved.', 'beyond-the-screen' ), wp_date( 'Y' ), get_bloginfo( 'name', 'display' ) ); ?></p>
 					</div>
 
